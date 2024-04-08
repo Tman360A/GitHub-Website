@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+}
+
+.Sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0 20px 20px 0;
+    background-color: hsl(0, 0%, 40%);
+    transition: all ease-in-out 250ms;
+}
+
+.Sidebar:hover {
+    width: 200px;
+}
+
+.Sidebar a {
+    color: transparent;
+    background-color: transparent;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 30px;
+    translate: -200px;
+    height: 35px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    transition: all ease-in-out 250ms;
+    cursor: pointer;
+}
+
+.Sidebar .sub{
+    font-size: 20px;
+    height: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.Sidebar:hover a {
+    color: white;
+    background-color: hsl(0, 0%, 20%);
+    translate: 0px;
+}
+
+.Sidebar a:hover {
+    background-color: hsl(0, 0%, 15%);
+}
+
