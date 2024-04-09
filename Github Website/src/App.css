@@ -1,3 +1,16 @@
 * {
   font-family: sans-serif;
 }
+
+body {
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/62705578169901.5c9ccafbbdec8.jpg);
+  background-size: cover;
+}
+
+.Website {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}

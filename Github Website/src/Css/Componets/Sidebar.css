@@ -9,7 +9,8 @@ body {
     height: 100vh;
     margin: 0;
     border-radius: 0 20px 20px 0;
-    background-color: hsl(0, 0%, 40%);
+    background-color: hsla(0, 0%, 40%, 0.75);
+    box-shadow: 100px hsl(0, 0%, 0%);
     transition: all ease-in-out 250ms;
 }
 
@@ -18,14 +19,16 @@ body {
 }
 
 .Sidebar a {
-    color: transparent;
-    background-color: transparent;
+    color: white;
     text-align: center;
+    text-decoration: none;
     white-space: nowrap;
-    font-size: 30px;
+    font-size: 28px;
     translate: -200px;
     height: 35px;
+    border: hsl(0, 0%, 100%) solid 2px;
     border-radius: 10px;
+    box-shadow: 0px 4px 8px hsl(0, 0%, 50%);
     margin: 10px;
     padding: 10px;
     transition: all ease-in-out 250ms;
@@ -40,12 +43,9 @@ body {
 }
 
 .Sidebar:hover a {
-    color: white;
-    background-color: hsl(0, 0%, 20%);
     translate: 0px;
 }
 
 .Sidebar a:hover {
-    background-color: hsl(0, 0%, 15%);
+    background-color: hsl(0, 0%, 20%);
 }
-
