@@ -1,33 +1,40 @@
-import "../Css/Componets/AdminUsers.css"
-import { useRef, useState } from "react";
+import "../Css/Componets/AdminUsers.css";
+import React, { useState, useEffect } from "react";
+import AdminUserTab from "./AdminUserTab";
 
 function AdminUsers() {
-    const input = useRef(null);
+    const [data, setData] = useState([]);
 
-    const [output, setOutput] = useState("");
+    useEffect(() => {
+        fetchData();
+    }, []);
 
-    async function getUser() {
+    async function fetchData() {
         try {
-            const httpRequest = "https://22ab-71-8-146-222.ngrok-free.app/api/" + input.current.value;
+            const httpRequest = "https://22ab-71-8-146-222.ngrok-free.app/api/accounts";
             const account = await fetch(httpRequest, {
                 method: "GET",
                 headers: { "ngrok-skip-browser-warning": "true"}
             });
-            
+
             if (!account.ok) {
                 throw new Error("Failed to fetch user data");
             }
 
             const userData = await account.json();
-            setOutput("User Name: " + userData.userName + " Password: " + userData.password);
+            console.log("Fetched data:", userData); // Log fetched data
+            setData(userData);
+
         } catch (error) {
-            setOutput("Invalid User Name or Failed to fetch user data");
+            console.error("Error fetching data:", error);
         }
     }
 
     return(
-        <div>
-            {}
+        <div className="UserList">
+            {data.map((user) => (
+                <AdminUserTab id={user.id} userName={user.userName} password={user.password} />
+            ))}
         </div>
     );
 }

@@ -1,0 +1,10 @@
+.UserTab {
+    display: flex;
+    color: white;
+    border: hsla(0, 0%, 100%, 0.75) solid;
+    margin: 5px;
+}
+
+.UserTab p {
+    margin: 10px;
+}
