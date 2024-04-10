@@ -1,10 +1,11 @@
+import "../Css/Pages/LoginPage.css"
 import LoginBox from "../Components/LoginBox";
 
-function InfoPage() {
+function LoginPage() {
 
     return(
         <LoginBox></LoginBox>
     );
 }
 
-export default InfoPage
+export default LoginPage

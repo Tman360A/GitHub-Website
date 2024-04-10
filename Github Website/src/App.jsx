@@ -1,7 +1,9 @@
 import "./App.css"
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import HomePage from "./Pages/HomePage";
-import InfoPage from "./Pages/InfoPage";
+import LoginPage from "./Pages/LoginPage";
+import AdminPage from "./Pages/AdminPage";
+import ErrorPage from "./Pages/ErrorPage";
 import Sidebar from "./Components/Sidebar";
 
 function App() {
@@ -11,7 +13,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" Component={HomePage} />
-          <Route path="/Info" Component={InfoPage} />
+          <Route path="/login" Component={LoginPage} />
+          <Route path="/admin" Component={AdminPage} />
+          <Route path="*" Component={ErrorPage} />
         </Routes>
       </Router>
     </div>
