@@ -11,7 +11,7 @@ function AdminUsers() {
 
     async function fetchData() {
         try {
-            const httpRequest = "https://22ab-71-8-146-222.ngrok-free.app/api/accounts";
+            const httpRequest = "https://boss-grouper-explicitly.ngrok-free.app/api/accounts";
             const account = await fetch(httpRequest, {
                 method: "GET",
                 headers: { "ngrok-skip-browser-warning": "true"}
