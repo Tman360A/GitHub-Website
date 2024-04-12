@@ -38,8 +38,8 @@ body {
 .Sidebar .sub{
     font-size: 20px;
     height: 20px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .Sidebar:hover a {

@@ -2,8 +2,14 @@ import "../Css/Pages/HomePage.css"
 
 function HomePage() {
 
+    //sets document title
+    document.title = "Home";
+
     return(
-        <h1 className="HomeTitle">This is Home</h1>
+        <div className="HomePage">
+            <h1 className="HomeTitle">Home</h1>
+            <p>e</p>
+        </div>
     );
 }
 
