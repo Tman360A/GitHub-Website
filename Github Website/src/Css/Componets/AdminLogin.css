@@ -1,0 +1,46 @@
+.AdminLogin {
+    display: flex;
+    flex-direction: column;
+    background-color: hsla(0, 0%, 50%, 75%);
+    border: hsla(0, 0%, 100%, 0.75) solid;
+    border-radius: 10px;
+    padding: 20px; 
+    margin: auto;
+    gap: 10px;
+}
+
+.AdminLogin h2 {
+    color: hsl(0, 0%, 100%);
+    margin: auto;
+}
+
+.AdminLogin input{
+    color: hsl(0, 0%, 100%);
+    background-color: transparent;
+    text-align: center;
+    border: hsla(0, 0%, 100%, 0.75) solid;
+    border-radius: 10px;
+    padding: 5px;
+    margin: auto;
+    outline: none;
+}
+
+.AdminLogin input::placeholder {
+    color: hsl(0, 0%, 100%);
+    font-style: italic;
+}
+
+.AdminLogin button {
+    color: hsl(0, 0%, 100%);
+    background-color: transparent;
+    border: hsla(0, 0%, 100%, 0.75) solid;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: auto;
+    transition: all ease-in-out 250ms;
+    outline: none;
+}
+
+.AdminLogin button:hover {
+    background-color: hsl(0, 0%, 35%);
+}

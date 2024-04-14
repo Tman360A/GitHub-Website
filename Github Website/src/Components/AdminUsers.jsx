@@ -2,8 +2,8 @@ import "../Css/Componets/AdminUsers.css";
 import React, { useState, useEffect } from "react";
 import AdminUserTab from "./AdminUserTab";
 
-function AdminUsers() {
-  const [data, setData] = useState([]);
+function AdminUsers({accountJSON}) {
+  const [userData, setUserData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -21,27 +21,28 @@ function AdminUsers() {
       });
 
       if (!accounts.ok) {
-        throw new Error("Failed to fetch user data");
+        throw new Error("Failed to contact server");
       }
 
-      const userData = await accounts.json();
-      console.log("Fetched data:", userData); // Log fetched data
-      setData(userData);
+      const accountsData = await accounts.json();
+      console.log("Fetched data for all accounts"); // Log fetched userData
+      setUserData(accountsData);
 
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error fetching all accounts:", error);
     }
   }
 
-  const handleSearchChange = (event) => {
+  function handleSearchChange(event) {
     const query = event.target.value.toLowerCase();
     setSearchQuery(query);
   };
 
-  const filteredData = data.filter((user) => user.userName.toLowerCase().includes(searchQuery));
+  const filteredData = userData.filter((user) => user.userName.toLowerCase().includes(searchQuery));
 
   return (
     <div className="UserList">
+      <h2>Users</h2>
       <input type="text" value={searchQuery} onChange={handleSearchChange} placeholder="User Name..." />
       {filteredData.map((user) => (
         <AdminUserTab key={user.id} id={user.id} userName={user.userName} password={user.password} />

@@ -1,7 +1,32 @@
 .UserList {
+    display: flex;
+    flex-direction: column;
     background-color: hsla(0, 0%, 50%, 75%);
     border: hsla(0, 0%, 100%, 0.75) solid;
     border-radius: 10px;
     padding: 20px; 
     margin: auto;
+}
+
+.UserList h2 {
+    color: hsl(0, 0%, 100%);
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.UserList input {
+    background-color: transparent;
+    color: hsl(0, 0%, 100%);
+    font-size: 15px;
+    text-align: center;
+    border: hsla(0, 0%, 100%, 0.75) solid;
+    border-radius: 10px;
+    padding: 4px 10px;
+    margin: auto;
+    outline: none;
+}
+
+.UserList input::placeholder {
+    color: hsl(0, 0%, 100%);
+    font-style: italic;
 }

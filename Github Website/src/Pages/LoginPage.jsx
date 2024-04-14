@@ -4,7 +4,7 @@ import LoginBox from "../Components/LoginBox";
 function LoginPage() {
 
     return(
-        <LoginBox></LoginBox>
+        <LoginBox />
     );
 }
 
