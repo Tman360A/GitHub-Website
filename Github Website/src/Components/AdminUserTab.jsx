@@ -23,8 +23,10 @@ function AdminUserTab({id, userName, password}) {
             console.error("server connection error");
             return;
         }
-        
+    }
 
+    function goToUser() {
+        window.location.href = "account/" + userName;
     }
 
     return(
@@ -36,6 +38,7 @@ function AdminUserTab({id, userName, password}) {
             </div>
             <div className="UserTabOption">
                 <button onClick={deleteUser}>Delete</button>
+                <button onClick={goToUser}>User Page</button>
             </div>
         </div>
     );
