@@ -25,7 +25,7 @@ function AdminUsers({accountJSON}) {
       }
 
       const accountsData = await accounts.json();
-      console.log("Fetched data for all accounts"); // Log fetched userData
+      console.log("Fetched data for all accounts");
       setUserData(accountsData);
 
     } catch (error) {
@@ -43,7 +43,12 @@ function AdminUsers({accountJSON}) {
   return (
     <div className="UserList">
       <h2>Users</h2>
-      <input type="text" value={searchQuery} onChange={handleSearchChange} placeholder="User Name..." />
+      <div className="searchBar">
+        <input type="text" value={searchQuery} onChange={handleSearchChange} placeholder="User Name..." />
+        <div className="refreshIconContainer" onClick={fetchData}>
+          <img src="/refresh-icon.svg" className="refreshIcon"/>
+        </div>
+      </div>
       {filteredData.map((user) => (
         <AdminUserTab key={user.id} id={user.id} userName={user.userName} password={user.password} />
       ))}
