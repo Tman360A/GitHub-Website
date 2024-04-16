@@ -1,4 +1,4 @@
-.SignUp {
+.AccountPage {
     display: flex;
     flex-direction: column;
     background-color: hsla(0, 0%, 50%, 75%);
@@ -6,4 +6,8 @@
     border-radius: 10px;
     padding: 20px; 
     margin: auto;
+}
+
+.AccountPage p {
+    color: white;
 }

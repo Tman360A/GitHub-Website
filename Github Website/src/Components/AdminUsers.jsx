@@ -6,6 +6,15 @@ function AdminUsers({accountJSON}) {
   const [userData, setUserData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
+  const [iconRefreshing, isIconRefreshing] = useState(false);
+
+  function refreshIcon() {
+    isIconRefreshing(true);
+    fetchData();
+    setTimeout(() => {isIconRefreshing(false)},
+    1000);
+  }
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -45,12 +54,12 @@ function AdminUsers({accountJSON}) {
       <h2>Users</h2>
       <div className="searchBar">
         <input type="text" value={searchQuery} onChange={handleSearchChange} placeholder="User Name..." />
-        <div className="refreshIconContainer" onClick={fetchData}>
-          <img src="/refresh-icon.svg" className="refreshIcon"/>
+        <div className="refreshIconContainer" onClick={refreshIcon}>
+          <img src="/refresh-icon.svg" className={iconRefreshing ? "refreshIcon" : ""}/>
         </div>
       </div>
       {filteredData.map((user) => (
-        <AdminUserTab key={user.id} id={user.id} userName={user.userName} password={user.password} />
+        <AdminUserTab key={user.id} id={user.id} userName={user.userName} password={user.password} onChange={fetchData}/>
       ))}
     </div>
   );

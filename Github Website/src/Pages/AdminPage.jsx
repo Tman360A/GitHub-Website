@@ -1,3 +1,4 @@
+import '../Css/Pages/AdminPage.css'
 import { useState } from "react";
 import AdminUsers from "../Components/AdminUsers";
 import AdminLogin from "../Components/AdminLogin";

@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "../Css/Componets/AdminUserTab.css"
 
 function AdminUserTab({id, userName, password}) {
+
+    const [isDeleted, setDeleted] = useState(false);
 
     async function deleteUser() {
         try {
@@ -18,6 +21,7 @@ function AdminUserTab({id, userName, password}) {
             }
 
             console.log("account deleted");
+            setDeleted(true);
         } catch (error) {
 
             console.error("server connection error");
@@ -30,17 +34,21 @@ function AdminUserTab({id, userName, password}) {
     }
 
     return(
-        <div className="UserTabContainer">
-            <div className="UserTabInfo">
-                <p>ID: {id}</p>
-                <p>User Name: {userName}</p>
-                <p>Password: {password}</p>
+        <>
+        { !isDeleted && (
+            <div className="UserTabContainer">
+                <div className="UserTabInfo">
+                    <p>ID: {id}</p>
+                    <p>User Name: {userName}</p>
+                    <p>Password: {password}</p>
+                </div>
+                <div className="UserTabOption">
+                    <button onClick={deleteUser}>Delete</button>
+                    <button onClick={goToUser}>User Page</button>
+                </div>
             </div>
-            <div className="UserTabOption">
-                <button onClick={deleteUser}>Delete</button>
-                <button onClick={goToUser}>User Page</button>
-            </div>
-        </div>
+        )}
+        </>
     );
 }
 
