@@ -1,3 +1,4 @@
+import React from "react";
 import "../Css/Pages/AccountPage.css";
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -7,10 +8,11 @@ function AccountPage() {
     const { userName } = useParams();
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState("");
+    const [fetchedData, setFetchedData] = useState([]);
 
     useEffect(() => {
-        getAccountData();
-    }, []) 
+        getAccountData()
+    }, [userName]);
 
     const getAccountData = async () => {
         try {
@@ -24,23 +26,29 @@ function AccountPage() {
 
             if (!response.ok) {
                 console.log("Error fetching account data");
+                window.location.href = "/*"
                 return;
             }
 
-            console.log("account data received");
+            console.log("Account data received");
             const accountData = await response.json();
             setUserEmail(accountData.email);
             setUserPassword(accountData.password);
+
+            setFetchedData([
+                <GlitchText key="email" Word={userEmail} />,
+                <GlitchText key="password" Word={userPassword} />
+            ]);
+
         } catch (error) {
-            console.error("server connection error");
+            console.error("Server connection error:", error);
         }
     }
 
     return (
-        <div className="AccountPage">
-            <p>{GlitchText(userName)}</p>
-            <p>{userEmail}</p>
-            <p>{userPassword}</p>
+        <div key="page" className="AccountPage">
+            <GlitchText Word={userName} />
+            {fetchedData}
         </div>
     );
 }

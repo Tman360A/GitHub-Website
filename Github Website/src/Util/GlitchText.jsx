@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function GlitchText(Word) {
+function GlitchText({Word}) {
 
     const [glitch, setGlitch] = useState("");
     const [wordLength, setwordLength] = useState(0);
@@ -37,7 +37,7 @@ function GlitchText(Word) {
         }         
     }
 
-    return Word.slice(0, wordLength) + glitch.slice(0, glitchLength);
+    return <p>{Word.slice(0, wordLength) + glitch.slice(0, glitchLength)}</p>
 
 }
 

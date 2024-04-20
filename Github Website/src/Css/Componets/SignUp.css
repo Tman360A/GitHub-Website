@@ -6,4 +6,27 @@
     border-radius: 10px;
     padding: 20px; 
     margin: auto;
+    gap: 10px
+}
+
+.SignUp input {
+    color: white;
+    background-color: transparent;
+    border: hsla(0, 0%, 100%, 0.75) solid;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+}
+
+.SignUp input::placeholder {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+.SignUp button {
+    color: white;
+    background-color: transparent;
+    border: hsla(0, 0%, 100%, 0.75) solid;
+    border-radius: 10px;
 }
