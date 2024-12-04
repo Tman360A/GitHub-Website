@@ -4,7 +4,7 @@ import "../Css/Componets/LoginBox.css";
 function LoginBox() {
     
     const userName = useRef(null);
-    const password = useRef(null)
+    const password = useRef(null);
     const status = useRef(null);
 
     const [text, setText] = useState("Insert User Name and password");
